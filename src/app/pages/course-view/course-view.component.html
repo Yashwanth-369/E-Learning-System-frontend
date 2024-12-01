@@ -1,0 +1,183 @@
+<div class="course-card" *ngIf="course_info">
+  <div class="left-section">
+    <img [src]="course_info?.image" alt="Course Image">
+  </div>
+  <div class="right-section">
+    <div class="course-header">
+      <h2>{{ course_info?.title }}</h2>
+      <div class="status">
+        <span class="badge">{{ course_info?.availability }}</span>
+        <div class="rating">
+          <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+          <a href="#">Rate this course</a>
+        </div>
+      </div>
+    </div>
+    <p class="author">Instructor: {{ course_info?.author }}</p>
+    <p class="date">Start Date: {{ course_info?.startDate }} | End Date: {{ course_info?.endDate }}</p>
+    <p class="duration">Duration: {{ course_info?.duration }}</p>
+    <p class="description">{{ course_info?.description }}</p>
+    <p class="topics">{{ course_info?.topics}}</p>
+  </div>
+</div>
+
+<h3>Modules</h3>
+    <table class="modules-table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Module Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of course_info?.modules; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ module }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3>Videos</h3>
+    <div class="videos-container">
+      <div class="video-item" *ngFor="let video of course_info?.videos; let i = index">
+        <div class="video-thumbnail">
+          <a [href]="video.url" target="_blank">
+            <img 
+              [src]="'https://img.youtube.com/vi/' + extractVideoId(video.url) + '/hqdefault.jpg'" 
+              alt="{{ video.title }}" 
+            />
+          </a>
+        </div>
+        <div class="video-details">
+          <h4>{{ video.title }}</h4>
+          <p>{{ video.description }}</p>
+          <div
+  class="progress-circle"
+  [style.background]="
+    'conic-gradient(' + progressColors[i] + ' ' + progress[i] + '%, #ccc ' + progress[i] + '% 100%)'
+  "
+  (click)="updateProgress(i)"
+>
+  <span>{{ progress[i] }}%</span>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="download-section">
+        <button class="download-button" *ngIf="course_info?.pdfPath" (click)="downloadResource(course_info?.pdfPath)">
+          Download Resources
+        </button>
+      </div>
+      <div class="quiz-container">
+        <button class="quiz-button" (click)="navigateToQuiz(course_info)">Take Quiz</button>
+      </div>
+      
+      <div class="certificate-section">
+        <h2>Claim Your Course Certificate for Free</h2>
+        <ul>
+          <li><span>Gain practical knowledge through course completion.</span></li>
+          <li><span>Improve your skills with hands-on assignments and real-world examples.</span></li>
+          <li><span>Receive a certificate upon successful completion of the course.</span></li>
+        </ul>
+        <div class="certificate-image-container">
+          <img 
+            src="https://www.techstack.in/images/web-development-certificate.webp" 
+            alt="Sample Certificate" 
+            class="certificate-image"
+          />
+        </div>
+      </div>
+      
+      
+      <div class="course-container">
+        <!-- Star Rating Section -->
+        <div class="rating-header">
+          <h2>Rate This Course</h2>
+          <p>Your feedback helps us improve!</p>
+        </div>
+        <div class="star-rating">
+          <span
+            class="star"
+            *ngFor="let star of stars; let i = index"
+            [ngClass]="{ 'filled': i < selectedRating }"
+            (click)="selectRating(i + 1)"
+          >
+            &#9733;
+          </span>
+        </div>
+        <div class="thank-you-message" *ngIf="selectedRating > 0">
+          <p>Thank you for rating {{ selectedRating }} star(s)!</p>
+        </div>
+      </div>
+      
+
+<!-- Feedback Overlay -->
+<div id="feedback-overlay" class="overlay" [class.show]="isFeedbackVisible">
+  <div class="feedback-form">
+    <button class="close-btn" (click)="closeOverlay()">&#x2715;</button>
+    <h3>Very Good</h3>
+    <div class="stars">
+      <span class="star" *ngFor="let star of stars; let i = index" [ngClass]="{ 'filled': i < selectedRating }">
+        &#9733;
+      </span>
+    </div>
+    <p>What did you enjoy most? (select at least 2 fields)</p>
+    <div class="feedback-options">
+      <button
+        *ngFor="let option of feedbackOptions"
+        (click)="toggleOption(option)"
+        [ngClass]="{ 'selected': selectedOptions.includes(option) }"
+      >
+        {{ option }}
+      </button>
+    </div>
+    <input type="text" placeholder="Highlight your learning experience..." />
+    <textarea placeholder="What did you like?..."></textarea>
+    <button class="submit-btn">Submit Feedback</button>
+  </div>
+</div>
+<footer class="unique-footer">
+  <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section about">
+          <h2 class="footer-logo">E-Learning</h2>
+          <p>Your gateway to limitless knowledge. Explore, learn, and grow with the best online courses designed for your success.</p>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section links">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="registration" id="registration-link">Registration</a></li>
+            <li><a href="profile" id="profile-link">Student Profile</a></li>
+            <li><a href="course-details" id="course-details-link">Course</a></li>
+            <li><a href="about" id="about-link">About</a></li>
+            <li><a href="contact" id="contact-link">Contact</a></li>
+            <li><a href="admin" id="admin-link">Admin</a></li>
+          </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-section contact-form">
+          <h3>Get in Touch</h3>
+          <form action="#" method="post">
+              <input type="email" placeholder="Enter your email" required>
+              <textarea placeholder="Your Message" rows="3"></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+      <p>&copy; 2024 E-Learning. All rights reserved.</p>
+  </div>
+</footer>
+

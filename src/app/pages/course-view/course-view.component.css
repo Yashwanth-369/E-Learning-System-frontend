@@ -1,0 +1,719 @@
+/* Container styling */
+.course-card {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left Section: Image */
+  .left-section {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .left-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  
+  /* Right Section: Course details */
+  .right-section {
+    flex: 2;
+    padding-left: 20px;
+  }
+  
+  .course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .course-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .badge {
+    background-color: #2196f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .rating {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .rating span {
+    color: #ff9800;
+    font-size: 16px;
+  }
+  
+  .rating a {
+    margin-left: 10px;
+    color: #2196f3;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .download-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .download-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Details styling */
+  .author,
+  .date,
+  .duration {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    font-weight: 600;
+  }
+  
+  .description,
+  .topics {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Hover effects */
+  .course-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+  }
+
+  /* Star Rating Section */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .star {
+    font-size: 30px;
+    color: grey;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  /* Feedback Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Enable scrolling */
+    padding: 20px;
+  }
+  
+  .overlay.show {
+    display: flex;
+  }
+  
+  .feedback-form {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust height as needed */
+  }
+  
+  .quiz-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-button:active {
+    background-color: #39843c;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .feedback-form h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .feedback-options button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  textarea,
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Feedback Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Enable scrolling for overlay */
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .overlay.show {
+    display: flex;
+  }
+  
+  .feedback-form {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh; /* Ensure form fits in viewport */
+    overflow-y: auto; /* Enable scrolling within form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  
+  
+  /* Full-width container */
+.container {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Heading Styling for Modules and Videos */
+h3 {
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #333; 
+  margin-bottom: 15px; 
+}
+
+
+/* Centered Course Module Table with Constrained Width */
+.modules-table {
+  width: 70%; 
+  margin: 20px auto; 
+  background-color: #f0f0f0;
+  border-collapse: collapse;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.modules-table th,
+.modules-table td {
+  padding: 15px; 
+  border: 1px solid #ccc; 
+  text-align: left;
+}
+
+.modules-table th {
+  background-color: #1c7ce9; 
+  color: #ffffff;
+  text-transform: uppercase; 
+}
+
+.modules-table td {
+  background-color: #f8f6f6; 
+  color: #333;
+}
+
+/* Videos Container Styling with Increased Size */
+.videos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between videos */
+  width: 80%; /* Constrain width to 80% */
+  margin: 30px auto; /* Center the container horizontally */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px; /* Rounded edges */
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+}
+
+/* Individual Video Items with Larger Thumbnails */
+.video-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc; /* Light border */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for each video */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.video-item:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Larger Thumbnail Images */
+.video-thumbnail img {
+  width: 350px; /* Increased width for bigger thumbnails */
+  height: 200px; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded edges */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for thumbnails */
+}
+
+/* Video Details Section */
+.video-details {
+  margin-left: 20px; /* Space between thumbnail and details */
+  flex: 1; /* Expand to fill space */
+}
+
+.video-details h4 {
+  margin: 0 0 10px; /* Margin for spacing */
+  font-size: 20px; /* Larger font size for titles */
+  color: #333;
+  font-weight: bold;
+}
+
+.video-details p {
+  margin: 0 0 10px;
+  font-size: 16px; /* Bigger font size for descriptions */
+  color: #666;
+}
+
+/* Progress Circle Styling */
+.progress-circle {
+  width: 80px; /* Circle size */
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ccc 0%, /* Default gray color for border */
+    #ccc 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #666; /* Default text color */
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transition: background 0.5s ease; /* Smooth transition for color */
+  animation: rotate 1.5s linear infinite; /* Animation for progress */
+}
+
+.progress-circle span {
+  position: absolute;
+  font-size: 16px; /* Font size for percentage */
+  font-weight: bold;
+  color: #807c7c; /* Default font color */
+}
+.certificate-section {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certificate-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #007BFF; /* Blue color for the heading */
+}
+
+.certificate-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.certificate-section ul li {
+  font-weight: bold; /* Bold text for points */
+  color: #333; /* Dark color for text */
+  margin-bottom: 10px;
+}
+
+.certificate-image-container {
+  margin-top: 20px;
+}
+
+.certificate-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-image:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+.course-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 20px 30px 25px rgb(143, 132, 132);
+  max-width: 500px; 
+  margin: 1in auto ; 
+  animation: fadeIn 1s ease-in-out;
+}
+
+.rating-header h2 {
+  font-size: 26px; 
+  color: #007BFF;
+  margin-bottom: 8px;
+  font-weight: bold; 
+  animation: slideIn 1s ease;
+}
+
+.rating-header p {
+  font-size: 18px; 
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: bold; 
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107; /* Golden color for filled stars */
+  transform: scale(1.2); /* Slight zoom on fill */
+}
+
+.star:hover {
+  transform: scale(1.3);
+  color: #ff9800; /* Orange on hover */
+}
+
+.thank-you-message {
+  margin-top: 20px;
+  font-size: 18px; /* Slightly larger font size */
+  color: #28a745;
+  font-weight: bold; /* Bold text */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+  /* For feedback options */
+  .feedback-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  /* Feedback Options Styling */
+.feedback-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .feedback-options button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .feedback-options button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Selected state styling */
+  .feedback-options .selected {
+    background-color: #4CAF50; /* Change this to your preferred selected color */
+    color: #fff;
+    border: 1px solid #4CAF50;
+  }
+  /* Footer General Styles */
+.unique-footer {
+  background: linear-gradient(135deg, #6A11CB, #2575FC);
+  color: #fff;
+  padding: 60px 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.footer-section p {
+  color: #ddd;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFD700; /* Gold hover effect */
+}
+
+/* Quick Links Section */
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #FFD700; /* Gold hover effect */
+}
+
+/* Contact Form Section */
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #FFC107;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      margin-bottom: 30px;
+      text-align: center;
+  }
+}

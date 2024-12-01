@@ -1,0 +1,146 @@
+.quiz-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.question-card {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px solid #90caf9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.option label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: #37474f;
+}
+
+.submit-btn,
+.retake-btn,
+.certificate-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(to right, #64b5f6, #42a5f5);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover,
+.retake-btn:hover,
+.certificate-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.result-section {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out, pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.retake-message {
+  color: #d32f2f;
+  font-size: 18px;
+  animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.congratulations {
+  color: #388e3c;
+  font-size: 20px;
+  animation: scaleUp 1.5s ease-in-out;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.score-calculation {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e88e5;
+  animation: spinFade 1s ease-in-out;
+}
+
+@keyframes spinFade {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+}

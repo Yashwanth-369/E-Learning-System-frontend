@@ -1,0 +1,742 @@
+/* Overall layout */
+.hero {
+  height: 100vh;
+  background-image: url('https://erepublic.brightspotcdn.com/dims4/default/a8dccd4/2147483647/strip/true/crop/6200x3233+0+0/resize/840x438!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F1b%2Ff0%2F3a2fc39c4de7943d2e5b6813bfd2%2Fonline-college-course.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; 
+}
+
+.hero-content h1 {
+  font-size: 4rem; 
+  margin-bottom: 20px;
+  color: #0914e9; 
+  font-weight: bold; 
+  position: relative;
+  opacity: 0; 
+  animation: moveDown 3s ease-in-out forwards; 
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); 
+}
+
+/* Container styling */
+.explore-topics {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading style */
+.explore-topics h2 {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+/* Grid container */
+.topics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Box styling */
+.topic-box {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Logo styling */
+.topic-box img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Text styling */
+.topic-box p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Hover effect */
+.topic-box:hover {
+  transform: scale(1.1);
+  background-color: #4a88c9;
+  color: #fff;
+}
+
+.topic-box:hover p {
+  color: #fff;
+}
+
+
+@keyframes moveDown {
+  0% {
+      transform: translateY(-100%); 
+      opacity: 0; 
+  }
+  50% {
+      opacity: 1; 
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1; 
+  }
+}
+
+
+/* Full-Screen Overlay */
+.course-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  overflow-y: auto;
+  padding: 2rem 0; 
+  z-index: 1000;
+}
+
+/* Overlay Content with Scroll */
+.overlay-content {
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh; 
+  overflow-y: auto; 
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 10;
+}
+
+/* Table Styling */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background-color: #2c2c2c; /* Darker background for the entire table */
+  color: #f1f1f1; /* Light text color for contrast */
+}
+
+.course-table th, 
+.course-table td {
+  padding: 0.8rem;
+  border: 1px solid #444; /* Dark border for the cells */
+  text-align: center;
+}
+
+/* Header Row Styling */
+.course-table th {
+  background-color: #444; /* Even darker header background */
+  color: #fff; /* White text color for the header */
+  font-weight: bold;
+}
+
+/* Alternate Row Styling */
+.course-table tr:nth-child(even) {
+  background-color: #3a3a3a; /* Slightly lighter for alternate rows */
+}
+
+/* Hover Effect */
+.course-table tr:hover {
+  background-color: #555; /* Darker background on hover */
+}
+
+/* Text Color for Table Cells */
+.course-table td {
+  color: #e0e0e0; /* Light gray text color */
+}
+
+
+/* Course Update Note */
+.course-update-note {
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Certificate Image */
+.certificate-image {
+  width: 300px;
+  height: auto;
+  margin-top: 1.5rem;
+  border: 2px solid #ddd;
+}
+
+.go-to-course-btn {
+  padding: 10px 20px;
+  background-color: #0196e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.go-to-course-btn:hover {
+  transform: scale(1.05);
+  background-color: #4CAF50;
+}
+
+
+/* Overlay Background Image */
+.course-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://miro.medium.com/v2/resize:fit:1200/0*M4bxiCIjcTK-2Xr6.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+.cta-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-buttons button {
+  background-color: #08c8e9;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-buttons button:hover {
+  background-color: #0a19ee;
+}
+.courses-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Title styling */
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #090d10;
+  }
+  
+  /* Flexbox layout for the content and courses-offered sections */
+  .course-content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .course-info, .courses-offered {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgb(143, 132, 132);
+  }
+  
+  /* Heading styles */
+  .course-heading, .courses-offered h4 {
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  
+  /* List and description styling */
+  .course-list, .courses-offered ul, .archive-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+  
+  .course-list li, .courses-offered li, .archive-section li {
+    padding: 5px 0;
+    font-size: 1.1rem;
+    color: #34495e;
+  }
+  
+  /* Description paragraphs */
+  .course-description, .offered-description, .archive-description {
+    margin-top: 20px;
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Archive section */
+  .archive-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgb(143, 132, 132);
+  }
+  
+  .archive-section h4 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  
+  .archive-section ul li {
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+  /* Adjustments for responsive design */
+  @media (max-width: 768px) {
+    .course-content-container {
+      flex-direction: column;
+    }
+  }
+  
+  
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2980b9;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin: 10px 0;
+    color: #34495e;
+  }
+  
+  /* Scroll Effect */
+  .courses-section {
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  
+  .course-info, .courses-offered, .archive-section {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/* Course Page Styles */
+.course-page {
+  text-align: center;
+  margin: 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  position: relative;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.course-content, .course-details {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.course-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.course-dates, .course-availability {
+  color: #555;
+}
+
+.get-started-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.enroll-now-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.get-started-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling the Share Your Feedback Button */
+.feedback-button {
+  padding: 12px 24px;
+  background-color: #0761f2;  /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.feedback-button:hover {
+  background-color: #45a049;  /* Darker green on hover */
+  transform: scale(1.05);  /* Slightly enlarge the button */
+}
+.container {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.box {
+  width: 22%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(143, 132, 132);
+  transition: transform 0.3s, background-color 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  background-color: #1796ea;
+}
+
+.box img {
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.box h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+
+/* Container to hold the image and overlay content */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 500px; 
+  overflow: hidden;
+}
+
+/* The background image */
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Overlay content */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  background-color: rgba(123, 119, 119, 0.5); 
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+/* Heading styling */
+.overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Paragraph text styling */
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+.feedback-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feedback-btn:hover {
+  background-color: #0056b3;
+}
+
+  /* Adding custom fonts */
+  
+  /* Footer General Styles */
+.unique-footer {
+    background: linear-gradient(135deg, #6A11CB, #2575FC);
+    color: #fff;
+    padding: 60px 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    padding: 20px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.footer-section p {
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* Quick Links Section */
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* Contact Form Section */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #FFC107;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}

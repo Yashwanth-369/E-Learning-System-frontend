@@ -1,0 +1,237 @@
+<div class="login-content">
+  <h1>Welcome Back!</h1>
+  <h2 class="join">Join the Community of Innovators</h2>
+  <p>At <strong>E-Learning</strong>, we believe that great ideas can change the world. Whether you're here to collaborate, learn, or take your skills to the next level, we have the resources and community to support your journey.</p>
+
+  <div class="benefits">
+      <div class="benefit">
+        <i class="fas fa-lock"></i>
+          <h3>Unlock Your Potential</h3>
+          <p>Gain access to exclusive content, tutorials, and tools designed to help you excel in your field.</p>
+      </div>
+      <div class="benefit">
+          <i class="fas fa-users"></i>
+          <h3>Connect with Like-Minded Individuals</h3>
+          <p>Join a vibrant community of thinkers, creators, and innovators. Share your ideas and learn from others.</p>
+      </div>
+      <div class="benefit">
+          <i class="fas fa-bell"></i>
+          <h3>Stay Updated</h3>
+          <p>Be the first to know about our latest features, events, and opportunities tailored just for you.</p>
+      </div>
+  </div>
+
+  <h2>Ready to Get Started?</h2>
+  <div class="container">
+      <div class="logo"></div>
+      <div class="logoName">Sign-in</div>
+      <div [formGroup]="loginForm" class="inputs">
+        
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="text"
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small *ngIf="loginForm.get('email')?.hasError('required')">Email is required</small>
+          <small *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</small>
+        </div>
+        
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Maximum 6 characters"
+          formControlName="password"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <small *ngIf="loginForm.get('password')?.hasError('required')">Password is required</small>
+          <small *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</small>
+        </div>
+    
+        <button [disabled]="!loginForm.valid" (click)="onSubmit()">Sign In</button>
+      </div>
+    </div>
+    
+    <div class="forgot-password">
+      <h2>Forgot Your Password?</h2>
+      <p>Enter your registered email below, and we’ll send you instructions to reset your password.</p>
+      <form [formGroup]="forgotPasswordForm" (ngSubmit)="onSendPassword()">
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Enter your registered email"
+        />
+        <button type="submit" [disabled]="forgotPasswordForm.invalid">Submit</button>
+      </form>
+    </div>
+    
+    
+<footer class="unique-footer">
+  <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section about">
+          <h2 class="footer-logo">E-Learning</h2>
+          <p>Your gateway to limitless knowledge. Explore, learn, and grow with the best online courses designed for your success.</p>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section links">
+          <h3>Explore</h3>
+          <ul>
+              <li><a href="#">Home</a></li>
+            <li><a href="registration" id="registration-link">Registration</a></li>
+            <li><a href="profile" id="profile-link">Student Profile</a></li>
+            <li><a href="course-details" id="course-details-link">Course</a></li>
+            <li><a href="about" id="about-link">About</a></li>
+            <li><a href="contact" id="contact-link">Contact</a></li>
+            <li><a href="admin" id="admin-link">Admin</a></li>
+          </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-section contact-form">
+          <h3>Get in Touch</h3>
+          <form action="#" method="post">
+              <input type="email" placeholder="Enter your email" required>
+              <textarea placeholder="Your Message" rows="3"></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+      <p>&copy; 2024 E-Learning. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+<!-- <div class="login-content">
+  <h1>Welcome Back!</h1>
+  <h2 class="join">Join the Community of Innovators</h2>
+  <p>At <strong>E-Learning</strong>, we believe that great ideas can change the world. Whether you're here to collaborate, learn, or take your skills to the next level, we have the resources and community to support your journey.</p>
+
+  <div class="benefits">
+      <div class="benefit">
+        <i class="fas fa-lock"></i>
+          <h3>Unlock Your Potential</h3>
+          <p>Gain access to exclusive content, tutorials, and tools designed to help you excel in your field.</p>
+      </div>
+      <div class="benefit">
+          <i class="fas fa-users"></i>
+          <h3>Connect with Like-Minded Individuals</h3>
+          <p>Join a vibrant community of thinkers, creators, and innovators. Share your ideas and learn from others.</p>
+      </div>
+      <div class="benefit">
+          <i class="fas fa-bell"></i>
+          <h3>Stay Updated</h3>
+          <p>Be the first to know about our latest features, events, and opportunities tailored just for you.</p>
+      </div>
+  </div>
+
+  <h2>Ready to Get Started?</h2>
+  <div class="container">
+      <div class="logo"></div>
+      <div class="logoName">Sign-in</div>
+      <div [formGroup]="loginForm" class="inputs">
+       
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="text"
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small *ngIf="loginForm.get('email')?.hasError('required')">Email is required</small>
+          <small *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</small>
+        </div>
+       
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Maximum 6 characters"
+          formControlName="password"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <small *ngIf="loginForm.get('password')?.hasError('required')">Password is required</small>
+          <small *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</small>
+        </div>
+   
+        <button [disabled]="!loginForm.valid" (click)="onSubmit()">Sign In</button>
+      </div>
+    </div>
+   
+    <div class="forgot-password">
+      <h2>Forgot Your Password?</h2>
+      <p>Enter your registered email below, and we’ll send you instructions to reset your password.</p>
+      <form [formGroup]="forgotPasswordForm" (ngSubmit)="onSendPassword()">
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Enter your registered email"
+        />
+        <button type="submit" [disabled]="forgotPasswordForm.invalid">Submit</button>
+      </form>
+    </div>
+   
+   
+<footer class="unique-footer">
+  <div class="footer-container">
+        
+      <div class="footer-section about">
+          <h2 class="footer-logo">E-Learning</h2>
+          <p>Your gateway to limitless knowledge. Explore, learn, and grow with the best online courses designed for your success.</p>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+
+     
+      <div class="footer-section links">
+          <h3>Explore</h3>
+          <ul>
+              <li><a href="#">Home</a></li>
+            <li><a href="registration" id="registration-link">Registration</a></li>
+            <li><a href="profile" id="profile-link">Student Profile</a></li>
+            <li><a href="course-details" id="course-details-link">Course</a></li>
+            <li><a href="about" id="about-link">About</a></li>
+            <li><a href="contact" id="contact-link">Contact</a></li>
+            <li><a href="admin" id="admin-link">Admin</a></li>
+          </ul>
+      </div>
+
+     
+      <div class="footer-section contact-form">
+          <h3>Get in Touch</h3>
+          <form action="#" method="post">
+              <input type="email" placeholder="Enter your email" required>
+              <textarea placeholder="Your Message" rows="3"></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+      </div>
+  </div>
+
+  
+  <div class="footer-bottom">
+      <p>&copy; 2024 E-Learning. All rights reserved.</p>
+  </div>
+</footer> -->

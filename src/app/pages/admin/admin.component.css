@@ -1,0 +1,89 @@
+.breadcrumb-bg {
+    background: url('https://www.shutterstock.com/image-photo/admin-management-theme.jpg') no-repeat center center/cover;
+    padding: 5rem 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .admin-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+  }
+  
+  .background {
+    background: url('https://t3.ftcdn.net/jpg/05/30/96/04/360_F_530960431_c8fPd3HansYvrSJ4fJxZqp9OhjQmYoll.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 50px 20px;
+  }
+  
+  .admin-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container h2 {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .admin-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .card p {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

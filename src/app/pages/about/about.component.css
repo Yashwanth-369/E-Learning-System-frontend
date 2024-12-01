@@ -1,0 +1,271 @@
+.about-section {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Background Styling */
+  .breadcrumb-bg {
+    background: url('https://www.shutterstock.com/image-photo/elearning-education-internet-lessons-online-600nw-2158034833.jpg') no-repeat center center/cover;
+    padding: 5rem 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .breadcrumb-bg .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* About Content Styling */
+  .about-content {
+    padding: 3rem 0;
+  }
+  
+  .about-content .about-text h3 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-content .about-text .description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  .about-content .about-text .description strong {
+    color: #222;
+    font-weight: bold;
+  }
+  
+  /* Image Styling */
+  .about-content .about-image .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-content .about-image .image-container img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.85);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .about-content .about-image .image-container img:hover {
+    filter: brightness(1);
+    transform: scale(1.05);
+  }
+  
+/* Features Section */
+/* General styles for the icons and boxes */
+.grids-feature {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grids-feature:hover {
+    transform: scale(1.05);
+    background: #ffebcd; /* Soft beige background on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grids-feature .icon {
+    font-size: 40px;
+    color: #078dd6; /* Tomato color */
+    transition: color 0.3s ease;
+}
+
+.grids-feature:hover .icon {
+    color: #06a4d5; /* Light salmon color on hover */
+}
+
+.grids-feature .title-head {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0 10px;
+    transition: color 0.3s ease;
+}
+
+.grids-feature:hover .title-head {
+    color: #0e9ee1; /* Orange-red color on hover */
+}
+
+.grids-feature p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.counter {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.counter:hover {
+    transform: scale(1.05);
+    background: #e0f7fa; /* Light cyan background on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.counter span {
+    font-size: 50px;
+    color: #008080; /* Teal color */
+    transition: color 0.3s ease;
+}
+
+.counter:hover span {
+    color: #20b2aa; /* Light teal color on hover */
+}
+
+.counter .count-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444;
+    margin: 10px 0;
+}
+
+.counter:hover .count-number {
+    color: #00688b; /* Deep sky blue color on hover */
+}
+
+.counter .count-text {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.counter:hover .count-text {
+    color: #4682b4; /* Steel blue color on hover */
+}
+/* Footer General Styles */
+.unique-footer {
+  background: linear-gradient(135deg, #6A11CB, #2575FC);
+  color: #fff;
+  padding: 60px 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.footer-section p {
+  color: #ddd;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFD700; /* Gold hover effect */
+}
+
+/* Quick Links Section */
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #FFD700; /* Gold hover effect */
+}
+
+/* Contact Form Section */
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #FFC107;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      margin-bottom: 30px;
+      text-align: center;
+  }
+}
+

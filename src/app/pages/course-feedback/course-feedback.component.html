@@ -1,0 +1,28 @@
+<div class="feedback-container">
+    <h2>Course Feedback</h2>
+  
+    <!-- Feedback Form -->
+    <form (ngSubmit)="submitFeedback()">
+      <div class="form-group">
+        <label for="courseName">Course Name</label>
+        <input type="text" id="courseName" [(ngModel)]="feedback.courseName" name="courseName" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="rating">Rating (1 to 5)</label>
+        <input type="number" id="rating" [(ngModel)]="feedback.rating" name="rating" min="1" max="5" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea id="comments" [(ngModel)]="feedback.comments" name="comments" rows="4" required></textarea>
+      </div>
+  
+      <button type="submit" class="submit-button">Submit Feedback</button>
+    </form>
+  
+    <!-- Success Message -->
+    <div *ngIf="feedbackSubmitted" class="success-message">
+      Feedback submitted successfully!
+    </div>
+  </div>
