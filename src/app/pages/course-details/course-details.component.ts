@@ -350,7 +350,7 @@ export class CourseDetailsComponent implements OnDestroy {
     },
     {
       id:5,
-      title: 'AI & Machine Learning',
+      title: 'AI and Machine Learning',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWSdD-C1RFUUoC0nR-3ZAo9HR0xBqOs146g&s',
       startDate: '2024-05-20',
       endDate: '2024-09-20',
@@ -414,7 +414,7 @@ export class CourseDetailsComponent implements OnDestroy {
     },
     {
       id:6,
-      title: 'Cybersecurity',
+      title: 'Cyber Security',
       image: 'https://senlainc.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0-2560%D1%851600.jpg.webp',
       startDate: '2024-06-01',
       endDate: '2024-10-01',
@@ -544,7 +544,7 @@ export class CourseDetailsComponent implements OnDestroy {
     },
     {
       id:8,
-      title: 'UI/UX Design',
+      title: 'UI / UX Design',
       image: 'https://img-c.udemycdn.com/course/750x422/531148_b0a2_4.jpg',
       startDate: '2024-02-01',
       endDate: '2024-06-01',
@@ -796,7 +796,7 @@ export class CourseDetailsComponent implements OnDestroy {
     },
     {
       id:12,
-      title: 'Artificial Intelligence and Data Science (AIDS)',
+      title: 'Artificial Intelligence and Data Science',
       image: 'https://assets.thehansindia.com/h-upload/2022/04/23/1600x960_1288605-artificial-intelligence.webp',
       startDate: '2024-06-01',
       endDate: '2024-10-01',
@@ -931,17 +931,16 @@ export class CourseDetailsComponent implements OnDestroy {
     course.showEnroll = true;
   }
   showCourseView(course: any): void {
-    this.service.updateSelectedCourse(course); // Pass full course data
-    // Navigate to the course-view component
+    this.service.updateSelectedCourse(course); 
   }
   
 
   enrollCourse(course: any) {
     course.showSuccess = true;
     course.showEnroll = false;
-    this.showOverlay(course);  // Show overlay after successful enrollment
+    this.showOverlay(course); 
     console.log(course)
-    this.service.enrolled(course.id,course.email).subscribe(res=>{
+    this.service.enrolled(course.id,"yashwanthanumandla1@gmail.com").subscribe(res=>{
       console.log("Enrolled successfully");
     }, err => {
       console.log(" Error occurred while enroll process");

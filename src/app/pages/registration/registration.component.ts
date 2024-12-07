@@ -15,14 +15,14 @@ import { ApiService, RegisterDetails } from '../../shared/api.service';
 })
 export class RegistrationComponent implements AfterViewInit {
   private currentSlide: number = 0;
-  private slides!: NodeListOf<HTMLElement>; // Use definite assignment assertion
-  private totalSlides: number = 0; // Initialize to zero
+  private slides!: NodeListOf<HTMLElement>; 
+  private totalSlides: number = 0; 
   showOtpSection = signal<boolean>(false);
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder, private apiService: ApiService,private router: Router) {
     this.registrationForm = this.fb.group({
-      role: ['student', Validators.required], // Default to 'student'
+      role: ['student', Validators.required],
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       address: ['', Validators.required],
@@ -38,7 +38,7 @@ export class RegistrationComponent implements AfterViewInit {
     this.slides = document.querySelectorAll<HTMLElement>('.slide');
     this.totalSlides = this.slides.length;
     this.scrollAnimation();
-    this.startImageSlider(); // Start the image slider
+    this.startImageSlider();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -75,12 +75,12 @@ export class RegistrationComponent implements AfterViewInit {
     }
   }
 
-  public nextSlide(): void { // Changed to public
+  public nextSlide(): void {
     this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
     this.showSlide(this.currentSlide);
   }
 
-  public prevSlide(): void { // Changed to public
+  public prevSlide(): void {
     this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
     this.showSlide(this.currentSlide);
   }
@@ -94,8 +94,6 @@ export class RegistrationComponent implements AfterViewInit {
     const target = event.currentTarget as HTMLElement;
     target.classList.remove('hovered');
   }
-
-  // Add public methods for arrow clicks
   public handleNext(): void {
     this.nextSlide();
   }
@@ -103,8 +101,6 @@ export class RegistrationComponent implements AfterViewInit {
   public handlePrev(): void {
     this.prevSlide();
   }
-
-
   onSubmit(): void {
     console.log('Form Submitted:', this.registrationForm.value);
 
@@ -130,7 +126,6 @@ export class RegistrationComponent implements AfterViewInit {
       console.error('Form is invalid');
     }
   }
-
   verifyOtp() {
     const email = this.registrationForm.value.email;
     const otp = this.registrationForm.value.otp;
@@ -142,7 +137,12 @@ export class RegistrationComponent implements AfterViewInit {
       this.apiService.verifyOtp(payload).subscribe(response => {
           console.log(response);
           this.showOtpSection.set(true);
-          this.router.navigate(['login']);
+          setTimeout(() => {
+            this.showOtpSection.set(false);
+          }, 5000);
+  
+          alert("You have registered successfully! Redirecting to ,login");
+          this.router.navigate(['/login']);
         }, err => { 
           console.log("Error occurred ", err);
           this.showOtpSection.set(false);
@@ -152,4 +152,7 @@ export class RegistrationComponent implements AfterViewInit {
       alert('Invalid OTP, please try again.');
     }
   }
+navigateToLogin(){
+  this.router.navigate(['/login']);
+ }
 }

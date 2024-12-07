@@ -269,7 +269,109 @@ form input[type="submit"]:hover {
 .info__box:hover img {
     transform: scale(1.05);
 }
-
+.registration-message {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .registration-message p {
+    font-size: 18px;
+    color: #4a4a4a;
+  }
+  
+  .animated-text {
+    color: #007bff;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .animated-text .emoji {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 5px;
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button-container:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  .otp__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .otp__container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .otp__container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .otp__container input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .otp__container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .otp__container button:hover {
+    background-color: #0056b3;
+  }
+    
 .unique-footer {
     background: linear-gradient(135deg, #6A11CB, #2575FC);
     color: #fff;

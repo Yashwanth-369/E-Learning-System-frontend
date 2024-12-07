@@ -35,4 +35,5 @@ export class AboutComponent implements OnInit {
     this.startCounting("happyCustomers", 12100, 20000);  
     this.startCounting("dailyCustomers", 2560, 20000);  
   }
+  
 }
