@@ -79,6 +79,25 @@ export class CourseViewComponent implements OnInit {
     this.selectedRating = rating;
     this.isFeedbackVisible = true;
   }
+  feedbackComment: string ='';
+
+  submitFeedback(userEmail:string):void{
+    const feedbackPlayload={
+      rating:this.selectedRating,
+      option:this.selectedOptions,
+      comment:this.feedbackComment
+    };
+
+    this.service.submitFeedback(userEmail, feedbackPlayload).subscribe(
+      (response:any)=>{
+        console.log('Feedback submitting successfully:',response);
+        this.closeOverlay();
+      },
+      (err)=>{
+        console.log('error submitting feedback:',err);
+      }
+    );
+  }
 
   closeOverlay(): void {
     this.isFeedbackVisible = false;

@@ -48,6 +48,11 @@ export class ApiService {
     let url = this.api_url+`/api/courses/${id}/enroll?email=${email}`;
     return this.http.post(url,'');
   }
+  
+  submitFeedback(userEmail: string, feedback: any){
+    const url=`${this.api_url}/api/feedback/${userEmail}`;
+    return this.http.post(url, feedback);
+  }
 
   getCourses(){
     const url = this.api_url+'/api/courses'
